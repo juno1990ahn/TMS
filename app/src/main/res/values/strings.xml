@@ -1,0 +1,255 @@
+<resources>
+    <string name="app_name">Topical memory system</string>
+
+    <string name="glance_title">VERSE OF THE DAY</string>
+
+    <string name="topic_a">Live the New Life</string>
+
+    <string name="sub_topic_a_1">Christ the Center</string>
+    <string name="scripture_a_1">Therefore, if anyone is in Christ, he is a new creation; the old has gone, the new has come!</string>
+    <string name="verse_a_1">2 Corinthians 5:17</string>
+
+    <string name="sub_topic_a_2">Christ the Center</string>
+    <string name="scripture_a_2">I have been crucified with Christ and I no longer live, but Christ lives in me. The life I live in the body, I live by faith in the Son of God, who loved me and gave Himself for me.</string>
+    <string name="verse_a_2">Galations 2:20</string>
+
+    <string name="sub_topic_a_3">Obedience to Christ</string>
+    <string name="scripture_a_3">Therefore, I urge you, brothers, in the view of God\'s mercy, to offer your bodies as living sacrifices, holy and pleasing to God—this is your spiritual act of worship.</string>
+    <string name="verse_a_3">Romans 12:1</string>
+
+    <string name="sub_topic_a_4">Obedience to Christ</string>
+    <string name="scripture_a_4">"Whoever has My commands and obeys them, he is the one who loves Me. He who loves Me will be loved by My Father, and I too will love him and show Myself to him."</string>
+    <string name="verse_a_4">John 14:21</string>
+
+    <string name="sub_topic_a_5">The Word</string>
+    <string name="scripture_a_5">All Sripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness.</string>
+    <string name="verse_a_5">2 Timothy 3:16</string>
+
+    <string name="sub_topic_a_6">The Word</string>
+    <string name="scripture_a_6">"Do not let this Book of the Law depart from your mouth; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful."</string>
+    <string name="verse_a_6">Joshua 1:8</string>
+
+    <string name="sub_topic_a_7">Prayer</string>
+    <string name="scripture_a_7">"If you remain in Me and My words remain in you, ask whatever you wish, and it will be given you."</string>
+    <string name="verse_a_7">John 15:7</string>
+
+    <string name="sub_topic_a_8">Prayer</string>
+    <string name="scripture_a_8">Do not be anxious about anything, but in everything, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.</string>
+    <string name="verse_a_8">Philippians 4:6-7</string>
+
+    <string name="sub_topic_a_9">Fellowship</string>
+    <string name="scripture_a_9">"For where two or three come together in My name, there am I with them."</string>
+    <string name="verse_a_9">Matthew 18:20</string>
+
+    <string name="sub_topic_a_10">Fellowship</string>
+    <string name="scripture_a_10">And let us consider how we may spur one another on toward love and good deeds. Let us not give up meeting together, as some are in the habit of doing, but let us encourage one another—and all the more as you see the Day approaching.</string>
+    <string name="verse_a_10">Hebrews 10:24-25</string>
+
+    <string name="sub_topic_a_11">Witnessing</string>
+    <string name="scripture_a_11">"Come, Follow Me," Jesus said, "and I will make you fishers of men."</string>
+    <string name="verse_a_11">Matthew 4:19</string>
+
+    <string name="sub_topic_a_12">Witnessing</string>
+    <string name="scripture_a_12">I am not ashamed of the gospel, because it is the power of God for the salvation of everyone who believes: first for the Jew, then for the Gentile.</string>
+    <string name="verse_a_12">Romans 1:16</string>
+
+    <string name="topic_b">Proclaim Christ</string>
+
+    <string name="sub_topic_b_1">All Have Sinned</string>
+    <string name="scripture_b_1">For all have sinned and fall short of the glory of God.</string>
+    <string name="verse_b_1">Romans 3:23</string>
+
+    <string name="sub_topic_b_2">All Have Sinned</string>
+    <string name="scripture_b_2">We all, like sheep, have gone astray, each of us has turned to his own way; and the Lord has laid on Him the iniquity of us all.</string>
+    <string name="verse_b_2">Isaiah 53:6</string>
+
+    <string name="sub_topic_b_3">Sin\'s Penalty</string>
+    <string name="scripture_b_3">For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.</string>
+    <string name="verse_b_3">Romans 6:23</string>
+
+    <string name="sub_topic_b_4">Sin\'s Penalty</string>
+    <string name="scripture_b_4">Just as men is destined to die once, and after that to face judgment.</string>
+    <string name="verse_b_4">Hebrews 9:27</string>
+
+    <string name="sub_topic_b_5">Christ Paid the Penalty</string>
+    <string name="scripture_b_5">But God demonstrates His own love for us in this: While we were still sinners, Christ died for us.</string>
+    <string name="verse_b_5">Romans 5:8</string>
+
+    <string name="sub_topic_b_6">Christ Paid the Penalty</string>
+    <string name="scripture_b_6">For Christ died for sins once for all, the righteous for the unrighteous, to bring you to God. He was put to death in the body but made alive by the Spirit.</string>
+    <string name="verse_b_6">1 Peter 3:18</string>
+
+    <string name="sub_topic_b_7">Salvation Not by Works</string>
+    <string name="scripture_b_7">For it is by grace you have been saved, through faith—and this not from yourselves, it is the gift of God—not by works, so that no one can boast.</string>
+    <string name="verse_b_7">Ephesians 2:8-9</string>
+
+    <string name="sub_topic_b_8">Salvation Not by Works</string>
+    <string name="scripture_b_8">He saved us, not because of righteous things we had done, but because of His mercy. He saved us through the washing of rebirth and renewal by the Holy Spirit.</string>
+    <string name="verse_b_8">Titus 3:5</string>
+
+    <string name="sub_topic_b_9">Must Receive Christ</string>
+    <string name="scripture_b_9">Yet to all who received Him, to those who believed in His name, He gave the right to become children of God.</string>
+    <string name="verse_b_9">John 1:12</string>
+
+    <string name="sub_topic_b_10">Must Receive Christ</string>
+    <string name="scripture_b_10">"Here I am! I stand at the door and knock. If anyone hears my voice and opens the door, I will come in and eat with Him, and he with Me."</string>
+    <string name="verse_b_10">Revelation 3:20</string>
+
+    <string name="sub_topic_b_11">Assurance of Salvation</string>
+    <string name="scripture_b_11">I write these things to you who believe in the name of the Son of God so that you may know that you have eternal life.</string>
+    <string name="verse_b_11">1 John 5:13</string>
+
+    <string name="sub_topic_b_12">Assurance of Salvation</string>
+    <string name="scripture_b_12">"I tell you the truth, whoever hears My word and believes Him who sent Me has eternal life and will not be condemned; he has crossed over from death to life."</string>
+    <string name="verse_b_12">John 5:24</string>
+
+    <string name="topic_c">Rely on God\'s Resources</string>
+
+    <string name="sub_topic_c_1">His Spirit</string>
+    <string name="scripture_c_1">Don\'t you know that you yourselves are God\'s temple and that God\'s Spirit lives in you?</string>
+    <string name="verse_c_1">1 Corinthians 3:16</string>
+
+    <string name="sub_topic_c_2">His Spirit</string>
+    <string name="scripture_c_2">We have not received the spirit of the world but the Spirit who is from God, that we may understand what God has freely given us.</string>
+    <string name="verse_c_2">1 Corinthians 2:12</string>
+
+    <string name="sub_topic_c_3">His Strength</string>
+    <string name="scripture_c_3">"So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with My righteous right hand."</string>
+    <string name="verse_c_3">Isaiah 41:10</string>
+
+    <string name="sub_topic_c_4">His Strength</string>
+    <string name="scripture_c_4">I can do everything through Him ho gives me strength.</string>
+    <string name="verse_c_4">Philippians 4:13</string>
+
+    <string name="sub_topic_c_5">His Faithfulness</string>
+    <string name="scripture_c_5">Because of the Lord\'s great love we are not consumed, for His compassions never fail. They are new every morning; great is Your faithfulness.</string>
+    <string name="verse_c_5">Lamentations 3:22-23</string>
+
+    <string name="sub_topic_c_6">His Faithfulness</string>
+    <string name="scripture_c_6">"God is not a man, that He should lie, nor a son of man, that He should change His mind. Does He speak and then not act? Does He promise and not fulfill?"</string>
+    <string name="verse_c_6">Numbers 23:19</string>
+
+    <string name="sub_topic_c_7">His Peace</string>
+    <string name="scripture_c_7">You will keep in perfect peace him whose mind is steadfast, because he trusts in You.</string>
+    <string name="verse_c_7">Isaiah 26:3</string>
+
+    <string name="sub_topic_c_8">His Peace</string>
+    <string name="scripture_c_8">Cast all your anxiety on Him because He cares for You.</string>
+    <string name="verse_c_8">1 Peter 5:7</string>
+
+    <string name="sub_topic_c_9">His Provision</string>
+    <string name="scripture_c_9">He who did not spare His on Son, but gave Him up for us all—how will He not also, along with Him, graciously give us all things?</string>
+    <string name="verse_c_9">Romans 8:32</string>
+
+    <string name="sub_topic_c_10">His Provision</string>
+    <string name="scripture_c_10">And my God will meet all your needs according to His glorious riches in Christ Jesus.</string>
+    <string name="verse_c_10">Philippians 4:19</string>
+
+    <string name="sub_topic_c_11">His Help in Temptation</string>
+    <string name="scripture_c_11">Because He Himself suffered when He was tempted, He is able to help those who are being tempted.</string>
+    <string name="verse_c_11">Hebrews 2:18</string>
+
+    <string name="sub_topic_c_12">His Help in Temptation</string>
+    <string name="scripture_c_12">How can a young man keep his way pure? By living according to Your word. I have hidden Your word in my heart that I might not sin against You.</string>
+    <string name="verse_c_12">Psalm 119:9,11</string>
+
+    <string name="topic_d">Be Christ\'s Disciple</string>
+
+    <string name="sub_topic_d_1">Put Christ First</string>
+    <string name="scripture_d_1">"But seek first His kingdom and His righteousness, and all these things will be given to you as well."</string>
+    <string name="verse_d_1">Matthew 6:33</string>
+
+    <string name="sub_topic_d_2">Put Christ First</string>
+    <string name="scripture_d_2">Then He said to them all: "If anyone would come after Me, he must deny himself and take up his cross daily and follow Me."</string>
+    <string name="verse_d_2">Luke 9:23</string>
+
+    <string name="sub_topic_d_3">Separate from the World</string>
+    <string name="scripture_d_3">Do not love the world or anything in the world. If anyone loves the world, the love the Father is not in him. For everything in the world—the cravings of sinful man, the lust of his eyes and the boasting of what he has and does—comes not from the Father but from the world.</string>
+    <string name="verse_d_3">1 John 2:15-16</string>
+
+    <string name="sub_topic_d_4">Separate from the World</string>
+    <string name="scripture_d_4">Do not conform any longer to the pattern of this world, but be transformed by the renewal of your mind. Then you will be able to test and approve what God\'s will is—His good, pleasing and perfect will.</string>
+    <string name="verse_d_4">Romans 12:2</string>
+
+    <string name="sub_topic_d_5">Be Steadfast</string>
+    <string name="scripture_d_5">Therefore, my dear brothers, stand firm. Let nothing move you. Always give yourselves fully to the work of the Lord, because you know that your labor in the Lord is not in vain.</string>
+    <string name="verse_d_5">1 Corinthians 15:58</string>
+
+    <string name="sub_topic_d_6">Be Steadfast</string>
+    <string name="scripture_d_6">Consider Him who endured such opposition from sinful men, so that you will not grow weary and lose heart.</string>
+    <string name="verse_d_6">Hebrews 12:3</string>
+
+    <string name="sub_topic_d_7">Serve Others</string>
+    <string name="scripture_d_7">"For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many."</string>
+    <string name="verse_d_7">Mark 10:45</string>
+
+    <string name="sub_topic_d_8">Serve Others</string>
+    <string name="scripture_d_8">For we do not preach ourselves, but Jesus Christ as Lord, and ourselves as your servants for Jesus\' sake.</string>
+    <string name="verse_d_8">2 Corinthians 4:5</string>
+
+    <string name="sub_topic_d_9">Give Generously</string>
+    <string name="scripture_d_9">Honor the Lord with your wealth, with the firstfruits of all your crops; then your barns will be filled to overflowing, and your vats will brim over with new wine.</string>
+    <string name="verse_d_9">Proverbs 3:9-10</string>
+
+    <string name="sub_topic_d_10">Give Generously</string>
+    <string name="scripture_d_10">Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows generously will also reap generously. Each man should give what he has decided in his heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.</string>
+    <string name="verse_d_10">2 Corinthians 9:6-7</string>
+
+    <string name="sub_topic_d_11">Develop World Vision</string>
+    <string name="scripture_d_11">"But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."</string>
+    <string name="verse_d_11">Acts 1:8</string>
+
+    <string name="sub_topic_d_12">Develop World Vision</string>
+    <string name="scripture_d_12">"Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age."</string>
+    <string name="verse_d_12">Matthew 28:19-20</string>
+
+    <string name="topic_e">Grow in Christlikeness</string>
+
+    <string name="sub_topic_e_1">Love</string>
+    <string name="scripture_e_1">"A new command I give you: Love one another. As I have loved you, so you must love one another. By this all men will know that you are My disciples if you love one another."</string>
+    <string name="verse_e_1">John 13:34-35</string>
+
+    <string name="sub_topic_e_2">Love</string>
+    <string name="scripture_e_2">Dear children, let us not love with words or tongue but with actions and in truth.</string>
+    <string name="verse_e_2">1 John 3:18</string>
+
+    <string name="sub_topic_e_3">Humility</string>
+    <string name="scripture_e_3">Do nothing out of selfish ambition or vain conceit, but in humility consider others better than yourselves. Each of you should look not only to your own interests, but also to the interests of others.</string>
+    <string name="verse_e_3">Philippians 2:3-4</string>
+
+    <string name="sub_topic_e_4">Humility</string>
+    <string name="scripture_e_4">Young men, in the same way be submissive to those who are older. All of you, clothe yourselves with humility toward one another, because, "God opposes the proud but gives grace to the humble." Humble yourselves, therefore, under God\'s mighty hand, that He may lift you up in due time.</string>
+    <string name="verse_e_4">1 Peter 5:5-6</string>
+
+    <string name="sub_topic_e_5">Purity</string>
+    <string name="scripture_e_5">But among you there must not be even a hint of sexual immorality, or of any kind of impurity, or of greed because these are improper for God\'s holy people.</string>
+    <string name="verse_e_5">Ephesians 5:3</string>
+
+    <string name="sub_topic_e_6">Purity</string>
+    <string name="scripture_e_6">Dear friends, I urge you, as aliens and strangers in the world, to abstain from sinful desires, whih war against your soul.</string>
+    <string name="verse_e_6">1 Peter 2:11</string>
+
+    <string name="sub_topic_e_7">Honestly</string>
+    <string name="scripture_e_7">"Do not steal. Do not lie. Do not deceive one another."</string>
+    <string name="verse_e_7">Leviticus 19:11</string>
+
+    <string name="sub_topic_e_8">Honestly</string>
+    <string name="scripture_e_8">"So I strive always to keep my conscience clear before God and man."</string>
+    <string name="verse_e_8">Acts 24:16</string>
+
+    <string name="sub_topic_e_9">Faith</string>
+    <string name="scripture_e_9">And without faith it is impossible to please God, because anyone who comes to him must believe that He exists and that He rewards those who earnestly seek Him.</string>
+    <string name="verse_e_9">Hebrews 11:6</string>
+
+    <string name="sub_topic_e_10">Faith</string>
+    <string name="scripture_e_10">Yet he did not waver through unbelief regarding the promise of God, but was strengthened in his faith and gave glory to God, being fully persuaded that God had power to do what He had promised.</string>
+    <string name="verse_e_10">Romans 4:20-21</string>
+
+    <string name="sub_topic_e_11">Good Works</string>
+    <string name="scripture_e_11">Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up. Therefore, as we have opportunity, let us do good to all people, especially to those who belong to the family of believers.</string>
+    <string name="verse_e_11">Galations 6:9-10</string>
+
+    <string name="sub_topic_e_12">Good Works</string>
+    <string name="scripture_e_12">"In the same way, let your light shine before men, that they may see your good deeds and praise your Father in heaven."</string>
+    <string name="verse_e_12">Matthew 5:16</string>
+</resources>

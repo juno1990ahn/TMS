@@ -1,0 +1,9 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="dark_background">#212121</color>
+    <color name="dark_default_text">#ffffff</color>
+    <color name="dark_special_text">#7acbc1</color>
+    <color name="dark_fill_shape">#088473</color>
+    <color name="dark_faint_hr">#ccffffff</color>
+</resources>
