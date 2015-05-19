@@ -1,52 +1,56 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="@color/dark_background" tools:context=".TMSActivity">
+    android:layout_height="match_parent" android:background="@color/dark_background" tools:context=".TMSActivity"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.34">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:weightSum="1">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/glance_title"
-                    android:textColor="@color/dark_special_text"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/verse_a_1"
-                    android:textColor="@color/dark_default_text" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/scripture_a_1"
-                    android:textColor="@color/dark_default_text" />
-            </LinearLayout>
-        </FrameLayout>
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:weightSum="1">-->
+        <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.34">-->
+            <!--<LinearLayout-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:weightSum="1">-->
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/glance_title"-->
+                    <!--android:textColor="@color/dark_special_text"/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/verse_a_1"-->
+                    <!--android:textColor="@color/dark_default_text" />-->
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/scripture_a_1"-->
+                    <!--android:textColor="@color/dark_default_text" />-->
+            <!--</LinearLayout>-->
+        <!--</FrameLayout>-->
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/dark_faint_hr" />
         <com.pandaandthekid.tms.view.PackScrollView
+            android:id="@+id/packScroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
             <LinearLayout
                 android:id="@+id/packLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:paddingLeft="100dp"
+                android:paddingRight="100dp">
                 <com.pandaandthekid.tms.view.PackCardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -54,8 +58,19 @@
                 <com.pandaandthekid.tms.view.PackCardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-
+                <com.pandaandthekid.tms.view.PackCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <com.pandaandthekid.tms.view.PackCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <com.pandaandthekid.tms.view.PackCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <com.pandaandthekid.tms.view.PackCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </com.pandaandthekid.tms.view.PackScrollView>
-    </LinearLayout>
-</FrameLayout>
+    <!--</LinearLayout>-->
+</LinearLayout>

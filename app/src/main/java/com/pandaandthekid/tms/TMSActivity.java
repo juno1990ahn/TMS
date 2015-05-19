@@ -6,6 +6,7 @@ import android.widget.LinearLayout;
 
 import com.pandaandthekid.tms.util.SystemUiHider;
 import com.pandaandthekid.tms.verses.bean.TMSBundle;
+import com.pandaandthekid.tms.view.PackScrollView;
 
 
 /**
@@ -17,6 +18,8 @@ import com.pandaandthekid.tms.verses.bean.TMSBundle;
 public class TMSActivity extends Activity {
 
     LinearLayout packsContainer;
+    PackScrollView packScroll;
+
     TMSBundle[] visiblePacks = {
             TMSBundle.A_PACK,
             TMSBundle.B_PACK,
@@ -31,6 +34,7 @@ public class TMSActivity extends Activity {
 
         setContentView(R.layout.activity_tms);
 
+        packScroll = (PackScrollView) findViewById(R.id.packScroll);
         packsContainer = (LinearLayout) findViewById(R.id.packLayout);
 
         for (int i = 0; i < visiblePacks.length; i++) {
@@ -42,5 +46,7 @@ public class TMSActivity extends Activity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+
+        packScroll.setCurrentItemAndCenter(0);
     }
 }

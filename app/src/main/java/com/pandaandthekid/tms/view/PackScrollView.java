@@ -2,37 +2,36 @@ package com.pandaandthekid.tms.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-/**
- * Created by juneahn on 5/16/15.
- */
-
 public class PackScrollView extends HorizontalScrollView implements View.OnTouchListener {
 
-    private Context mContext;
-
     private static final int SWIPE_PAGE_ON_FACTOR = 10;
+    private static final int PACK_WIDTH_DP = 160;
 
-    private int mActiveItem;
-
-    private float mPrevScrollX;
-
+    private int activePack;
+    private float prevScrollX;
     private boolean mStart;
-
-    private int mItemWidth;
-
-    View targetLeft, targetRight;
-    PackCardView leftImage, rightImage;
+    private int packWidth;
 
     public PackScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mContext=context;
-        mItemWidth = 200; // or whatever your item width is.
+        this.activePack = 0;
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        WindowManager windowManager = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
+        windowManager.getDefaultDisplay().getMetrics(metrics);
+        float logicalDensity = metrics.density;
+
+        packWidth = (int) Math.ceil(PACK_WIDTH_DP * logicalDensity);
+
         setOnTouchListener(this);
     }
 
@@ -44,23 +43,23 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
                 if (mStart) {
-                    mPrevScrollX = x;
+                    prevScrollX = x;
                     mStart = false;
                 }
 
                 break;
             case MotionEvent.ACTION_UP:
                 mStart = true;
-                int minFactor = mItemWidth / SWIPE_PAGE_ON_FACTOR;
+                int minFactor = packWidth / SWIPE_PAGE_ON_FACTOR;
 
-                if ((mPrevScrollX - (float) x) > minFactor) {
-                    if (mActiveItem < getMaxItemCount() - 1) {
-                        mActiveItem = mActiveItem + 1;
+                if ((prevScrollX - (float) x) > minFactor) {
+                    if (activePack < getMaxItemCount() - 1) {
+                        activePack = activePack + 1;
                     }
                 }
-                else if (((float) x - mPrevScrollX) > minFactor) {
-                    if (mActiveItem > 0) {
-                        mActiveItem = mActiveItem - 1;
+                else if (((float) x - prevScrollX) > minFactor) {
+                    if (activePack > 0) {
+                        activePack = activePack - 1;
                     }
                 }
 
@@ -74,34 +73,11 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
     }
 
     private int getMaxItemCount() {
-        return ((LinearLayout) getChildAt(0)).getChildCount();
+        return getLinearLayout().getChildCount();
     }
 
     private LinearLayout getLinearLayout() {
         return (LinearLayout) getChildAt(0);
-    }
-
-    /**
-     * Centers the current view the best it can.
-     */
-    public void centerCurrentItem() {
-        if (getMaxItemCount() == 0) {
-            return;
-        }
-
-        int currentX = getScrollX();
-        View targetChild;
-        int currentChild = -1;
-
-        do {
-            currentChild++;
-            targetChild = getLinearLayout().getChildAt(currentChild);
-        } while (currentChild < getMaxItemCount() && targetChild.getLeft() < currentX);
-
-        if (mActiveItem != currentChild) {
-            mActiveItem = currentChild;
-            scrollToActiveItem();
-        }
     }
 
     /**
@@ -113,38 +89,13 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
             return;
         }
 
-        int targetItem = Math.min(maxItemCount - 1, mActiveItem);
+        int targetItem = Math.min(maxItemCount - 1, activePack);
         targetItem = Math.max(0, targetItem);
 
-        mActiveItem = targetItem;
+        activePack = targetItem;
 
         // Scroll so that the target child is centered
         View targetView = getLinearLayout().getChildAt(targetItem);
-
-        PackCardView centerImage = (PackCardView)targetView;
-        int height=300;//set size of centered image
-        LinearLayout.LayoutParams flparams = new LinearLayout.LayoutParams(height, height);
-        centerImage.setLayoutParams(flparams);
-
-        //get the image to left of the centered image
-        if((targetItem-1)>=0){
-            targetLeft = getLinearLayout().getChildAt(targetItem-1);
-            leftImage = (PackCardView)targetLeft;
-            int width=250;//set the size of left image
-            LinearLayout.LayoutParams leftParams = new LinearLayout.LayoutParams(width,width);
-            leftParams.setMargins(0, 30, 0, 0);
-            leftImage.setLayoutParams(leftParams);
-        }
-
-        //get the image to right of the centered image
-        if((targetItem+1)<maxItemCount){
-            targetRight = getLinearLayout().getChildAt(targetItem+1);
-            rightImage = (PackCardView)targetRight;
-            int width=250;//set the size of right image
-            LinearLayout.LayoutParams rightParams = new LinearLayout.LayoutParams(width,width);
-            rightParams.setMargins(0, 30, 0, 0);
-            rightImage.setLayoutParams(rightParams);
-        }
 
         int targetLeft = targetView.getLeft();
         int childWidth = targetView.getRight() - targetLeft;
@@ -160,7 +111,7 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
      * @param currentItem The new current item.
      */
     public void setCurrentItemAndCenter(int currentItem) {
-        mActiveItem = currentItem;
+        this.activePack = currentItem;
         scrollToActiveItem();
     }
 }
