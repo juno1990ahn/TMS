@@ -7,9 +7,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/packLetter"
         android:text="A" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/packTopic"
         android:text="Live the New Life" />
 </LinearLayout>

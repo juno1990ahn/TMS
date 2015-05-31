@@ -41,6 +41,9 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
 
         boolean handled = false;
         switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                prevScrollX = x;
+                break;
             case MotionEvent.ACTION_MOVE:
                 if (mStart) {
                     prevScrollX = x;

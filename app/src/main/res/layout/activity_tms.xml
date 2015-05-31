@@ -3,42 +3,47 @@
     android:layout_height="match_parent" android:background="@color/dark_background" tools:context=".TMSActivity"
     android:orientation="vertical">
 
-    <!--<LinearLayout-->
-        <!--android:orientation="vertical"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:weightSum="1">-->
-        <!--<FrameLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="0.34">-->
-            <!--<LinearLayout-->
-                <!--android:orientation="vertical"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:weightSum="1">-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/glance_title"-->
-                    <!--android:textColor="@color/dark_special_text"/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/verse_a_1"-->
-                    <!--android:textColor="@color/dark_default_text" />-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/scripture_a_1"-->
-                    <!--android:textColor="@color/dark_default_text" />-->
-            <!--</LinearLayout>-->
-        <!--</FrameLayout>-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.34">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/glance_title"
+                    android:textColor="@color/dark_special_text"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verse_a_1"
+                    android:textColor="@color/dark_default_text" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scripture_a_1"
+                    android:textColor="@color/dark_default_text" />
+            </LinearLayout>
+        </FrameLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/dark_faint_hr" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_pack"
+            android:textColor="@color/dark_special_text"/>
         <com.pandaandthekid.tms.view.PackScrollView
             android:id="@+id/packScroll"
             android:layout_width="match_parent"
@@ -51,26 +56,7 @@
                 android:orientation="horizontal"
                 android:paddingLeft="100dp"
                 android:paddingRight="100dp">
-                <com.pandaandthekid.tms.view.PackCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <com.pandaandthekid.tms.view.PackCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <com.pandaandthekid.tms.view.PackCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <com.pandaandthekid.tms.view.PackCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <com.pandaandthekid.tms.view.PackCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <com.pandaandthekid.tms.view.PackCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
             </LinearLayout>
         </com.pandaandthekid.tms.view.PackScrollView>
-    <!--</LinearLayout>-->
+    </LinearLayout>
 </LinearLayout>
