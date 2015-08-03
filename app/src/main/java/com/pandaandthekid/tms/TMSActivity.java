@@ -20,7 +20,6 @@ import com.pandaandthekid.tms.view.PackScrollView;
  * @see SystemUiHider
  */
 public class TMSActivity extends Activity {
-    public final static String CHOSEN_PACK = "com.pandaandthekids.tms.chosen_pack";
 
     LinearLayout packsContainer;
     PackScrollView packScroll;
@@ -70,7 +69,7 @@ public class TMSActivity extends Activity {
         TMSBundle pack = ((PackCardView) view).getPack();
         Log.d("TMS", "open Pack method");
         Intent intent = new Intent(this, MemorizeActivity.class);
-        intent.putExtra(CHOSEN_PACK, pack);
+        intent.putExtra(TMSBundle.CHOSEN_PACK, pack);
 
         startActivity(intent);
     }

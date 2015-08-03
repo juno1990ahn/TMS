@@ -5,6 +5,10 @@
 
     <string name="select_pack">SELECT MEMORY PACK</string>
 
+    <string name="peek_btn">Peek</string>
+    <string name="next_btn">Next</string>
+    <string name="to_main_btn">Back to Main</string>
+
     <string name="guideline_title">Recite the verse</string>
     <string name="guideline_1">If you need to peak at the verse, hold down the eye icon in the lower left.</string>
     <string name="guideline_2">Tap the screen if you want to reveal the next word.</string>
