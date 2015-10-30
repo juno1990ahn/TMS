@@ -1,62 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/verseId"/>
-    
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/versesMenu"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
     <LinearLayout
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/information_border"
-        android:padding="15dp"
-        android:id="@+id/verseContainer">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/guideline_title"
-            android:textSize="20dp"/>
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/guideline_1"
-            android:paddingTop="20dp"/>
+            android:background="@color/dark_fill_shape"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:elevation="10dp"
+            android:id="@+id/tms_tool_bar">
+        </android.support.v7.widget.Toolbar>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/guideline_2"
-            android:paddingTop="20dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/guideline_3"
-            android:paddingTop="20dp"/>
-
+        <android.support.v4.view.ViewPager
+            android:id="@+id/versePager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
     </LinearLayout>
 
-
-
-    <LinearLayout
+    <com.pandaandthekid.tms.view.MainMenuView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="left" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/peek_btn"
-            android:id="@+id/peekButton" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next_btn"
-            android:id="@+id/nextButton" />
-    </LinearLayout>
-</LinearLayout>
+</android.support.v4.widget.DrawerLayout>

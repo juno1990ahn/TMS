@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Topical memory system</string>
+    <string name="app_name">TMS</string>
 
     <string name="glance_title">VERSE OF THE DAY</string>
 
@@ -8,6 +8,9 @@
     <string name="peek_btn">Peek</string>
     <string name="next_btn">Next</string>
     <string name="to_main_btn">Back to Main</string>
+
+    <string name="open_menu">Open main menu</string>
+    <string name="close_menu">Close main menu</string>
 
     <string name="guideline_title">Recite the verse</string>
     <string name="guideline_1">If you need to peak at the verse, hold down the eye icon in the lower left.</string>

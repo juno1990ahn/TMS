@@ -1,13 +1,28 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="@color/dark_background" tools:context=".TMSActivity"
-    android:orientation="vertical">
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/versesMenu"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".TMSActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/main_view"
         android:weightSum="1">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_fill_shape"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:elevation="10dp"
+            android:id="@+id/tms_tool_bar">
+        </android.support.v7.widget.Toolbar>
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,4 +74,10 @@
             </LinearLayout>
         </com.pandaandthekid.tms.view.PackScrollView>
     </LinearLayout>
-</LinearLayout>
+
+    <com.pandaandthekid.tms.view.MainMenuView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:id="@+id/main_menu"/>
+</android.support.v4.widget.DrawerLayout>

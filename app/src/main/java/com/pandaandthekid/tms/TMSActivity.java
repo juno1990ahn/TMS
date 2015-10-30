@@ -1,8 +1,13 @@
 package com.pandaandthekid.tms;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -19,10 +24,13 @@ import com.pandaandthekid.tms.view.PackScrollView;
  *
  * @see SystemUiHider
  */
-public class TMSActivity extends Activity {
+public class TMSActivity extends AppCompatActivity {
 
-    LinearLayout packsContainer;
-    PackScrollView packScroll;
+    private LinearLayout packsContainer;
+    private PackScrollView packScroll;
+    private ActionBarDrawerToggle drawerToggle;
+    private DrawerLayout drawerLayout;
+    private Toolbar toolbar;
 
     TMSBundle[] visiblePacks = {
             TMSBundle.A_PACK,
@@ -38,8 +46,10 @@ public class TMSActivity extends Activity {
 
         setContentView(R.layout.activity_tms);
 
+        drawerLayout = (DrawerLayout) findViewById(R.id.versesMenu);
         packScroll = (PackScrollView) findViewById(R.id.packScroll);
         packsContainer = (LinearLayout) findViewById(R.id.packLayout);
+        toolbar = (Toolbar) findViewById(R.id.tms_tool_bar);
 
         for (TMSBundle pack : visiblePacks) {
             int topicId = getResources().getIdentifier(String.format("topic_%s", pack.toString().toLowerCase()), "string", getPackageName());
@@ -56,13 +66,52 @@ public class TMSActivity extends Activity {
             });
             packsContainer.addView(card);
         }
+
+        initializeToolbar();
     }
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-
         packScroll.setCurrentItemAndCenter(0);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        drawerToggle.onConfigurationChanged(newConfig);
+    }
+
+
+    private void initializeToolbar() {
+        setSupportActionBar(toolbar);
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setHomeButtonEnabled(true);
+        }
+
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_menu, R.string.close_menu) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+
+                invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+
+                invalidateOptionsMenu();
+            }
+        };
+
+        drawerToggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.setDrawerListener(drawerToggle);
     }
 
     public void openPack(View view) {
