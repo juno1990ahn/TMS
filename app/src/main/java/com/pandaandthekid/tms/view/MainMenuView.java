@@ -11,7 +11,7 @@ public class MainMenuView extends RelativeLayout {
     public MainMenuView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.main_menu, this);
     }
 }

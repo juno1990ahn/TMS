@@ -9,4 +9,9 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@null</item>
     </style>
+
+    <style name="ThemeOverlay.TMS.Toolbar" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">#FFEEEEEE</item>
+        <item name="android:textColor">#FF333333</item>
+    </style>
 </resources>

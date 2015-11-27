@@ -8,11 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pandaandthekid.tms.R;
-import com.pandaandthekid.tms.verses.bean.TMSBundle;
+import com.pandaandthekid.tms.verses.TMSBundle;
 
-/**
- * Created by juneahn on 5/16/15.
- */
 public class PackCardView extends LinearLayout {
 
     TMSBundle pack;
@@ -22,7 +19,7 @@ public class PackCardView extends LinearLayout {
 
     public PackCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.pack_card, this);
     }
 
@@ -40,6 +37,12 @@ public class PackCardView extends LinearLayout {
 
         this.letterView.setText(pack.toString());
         this.topicView.setText(topic);
+
+//        Typeface tf = Typeface.createFromAsset(context.getAssets(),
+//                "font/Roboto-Light.ttf");
+//
+//        this.letterView.setTypeface(tf);
+//        this.topicView.setTypeface(tf);
     }
 
     public TMSBundle getPack() {

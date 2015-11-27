@@ -9,75 +9,49 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/main_view"
-        android:weightSum="1">
+        >
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/dark_fill_shape"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:elevation="10dp"
-            android:id="@+id/tms_tool_bar">
-        </android.support.v7.widget.Toolbar>
+        <include layout="@layout/toolbar" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.34">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:weightSum="1">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/glance_title"
-                    android:textColor="@color/dark_special_text"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/verse_a_1"
-                    android:textColor="@color/dark_default_text" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/scripture_a_1"
-                    android:textColor="@color/dark_default_text" />
-            </LinearLayout>
-        </FrameLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/dark_faint_hr" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/select_pack"
-            android:textColor="@color/dark_special_text"/>
-        <com.pandaandthekid.tms.view.PackScrollView
-            android:id="@+id/packScroll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none">
-            <LinearLayout
-                android:id="@+id/packLayout"
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+            <TextView
+                android:layout_marginLeft="45dp"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="100dp"
-                android:paddingRight="100dp">
-            </LinearLayout>
-        </com.pandaandthekid.tms.view.PackScrollView>
+                android:text="@string/select_pack"
+                android:textColor="@color/dark_special_text"
+                android:id="@+id/select_label"
+                android:textSize="20sp"
+                android:gravity="bottom"
+                android:paddingBottom="30dp" />
+
+            <com.pandaandthekid.tms.view.PackScrollView
+                android:id="@+id/packScroll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:id="@+id/packLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:paddingLeft="70dp"
+                    android:paddingRight="70dp">
+                </LinearLayout>
+            </com.pandaandthekid.tms.view.PackScrollView>
+        </LinearLayout>
     </LinearLayout>
 
     <com.pandaandthekid.tms.view.MainMenuView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:id="@+id/main_menu"/>
+        android:id="@+id/main_menu" />
 </android.support.v4.widget.DrawerLayout>

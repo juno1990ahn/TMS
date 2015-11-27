@@ -9,14 +9,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
+import com.pandaandthekid.tms.adapters.NavMenuAdapter;
+import com.pandaandthekid.tms.adapters.VersePagerAdapter;
+import com.pandaandthekid.tms.verses.TMSBundle;
 import com.pandaandthekid.tms.verses.TMSVerse;
-import com.pandaandthekid.tms.verses.bean.TMSBundle;
 import com.pandaandthekid.tms.view.VerseFragment;
-import com.pandaandthekid.tms.view.VersePagerAdapter;
 
 import java.util.List;
 import java.util.Vector;
@@ -35,6 +40,9 @@ public class MemorizeActivity extends AppCompatActivity {
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
+    private TextView toolbarTitle;
+
+    private RecyclerView menuList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +57,19 @@ public class MemorizeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_memorize);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.versesMenu);
-        toolbar = (Toolbar) findViewById(R.id.tms_tool_bar);
+        this.drawerLayout = (DrawerLayout) findViewById(R.id.versesMenu);
+        this.toolbar = (Toolbar) findViewById(R.id.tms_tool_bar);
+        this.toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        this.menuList = (RecyclerView) findViewById(R.id.nav_list);
+
+//        Typeface tf = Typeface.createFromAsset(getAssets(),
+//                "font/Roboto-Light.ttf");
+//
+//        toolbarTitle.setTypeface(tf);
 
         initializeToolbar();
         initializeFragments();
+        initializeMenu();
     }
 
     private void initializeFragments() {
@@ -71,7 +87,16 @@ public class MemorizeActivity extends AppCompatActivity {
         versePager.setAdapter(this.pagerAdapter);
     }
 
+    private void initializeMenu() {
+        menuList.setHasFixedSize(true);
+        menuList.setLayoutManager(new LinearLayoutManager(this));
+
+        NavMenuAdapter adapter = new NavMenuAdapter(this);
+        menuList.setAdapter(adapter);
+    }
+
     private void initializeToolbar() {
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
@@ -93,6 +118,11 @@ public class MemorizeActivity extends AppCompatActivity {
 
                 invalidateOptionsMenu();
             }
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, 0); // this disables the animation
+            }
         };
 
         drawerLayout.setDrawerListener(drawerToggle);
@@ -109,6 +139,16 @@ public class MemorizeActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         drawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_toolbar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public TMSBundle getCurrentPack() {
+        return this.currentPack;
     }
 }
 

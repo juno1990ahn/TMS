@@ -12,7 +12,8 @@ import android.widget.LinearLayout;
 public class PackScrollView extends HorizontalScrollView implements View.OnTouchListener {
 
     private static final int SWIPE_PAGE_ON_FACTOR = 10;
-    private static final int PACK_WIDTH_DP = 160;
+    private static final int PACK_WIDTH_DP = 200;
+
 
     private int activePack;
     private float prevScrollX;
@@ -86,7 +87,7 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
     /**
      * Scrolls the list view to the currently active child.
      */
-    private void scrollToActiveItem() {
+    public void scrollToActiveItem() {
         int maxItemCount = getMaxItemCount();
         if (maxItemCount == 0) {
             return;
@@ -116,5 +117,13 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
     public void setCurrentItemAndCenter(int currentItem) {
         this.activePack = currentItem;
         scrollToActiveItem();
+    }
+
+    public int getActivePack() {
+        return activePack;
+    }
+
+    public void setActivePack(int activePack) {
+        this.activePack = activePack;
     }
 }

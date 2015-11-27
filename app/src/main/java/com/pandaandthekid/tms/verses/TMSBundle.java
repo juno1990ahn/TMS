@@ -1,4 +1,4 @@
-package com.pandaandthekid.tms.verses.bean;
+package com.pandaandthekid.tms.verses;
 
 public enum TMSBundle {
 

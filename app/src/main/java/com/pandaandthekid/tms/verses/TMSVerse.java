@@ -2,8 +2,6 @@ package com.pandaandthekid.tms.verses;
 
 import android.content.Context;
 
-import com.pandaandthekid.tms.verses.bean.TMSBundle;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
