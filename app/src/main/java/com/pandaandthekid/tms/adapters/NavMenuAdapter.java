@@ -55,7 +55,7 @@ public class NavMenuAdapter extends RecyclerView.Adapter<NavMenuAdapter.ViewHold
 
         if (menuItem.type == NavMenuItem.ACTIVITY_LINK) {
             if (context instanceof TMSActivity && menuItem.activity.equals(TMSActivity.class)) {
-                
+
             } else if (context instanceof MemorizeActivity && menuItem.activity.equals(MemorizeActivity.class) && ((MemorizeActivity) context).getCurrentPack().equals(menuItem.metadata.get(NavMenuItem.PACK))) {
             } else {
                 holder.view.setOnClickListener(new View.OnClickListener() {

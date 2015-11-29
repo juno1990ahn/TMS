@@ -34,6 +34,8 @@ public class TMSActivity extends AppCompatActivity {
     private TextView selectText;
     private TextView toolbarTitle;
 
+    private boolean packsInitialized;
+
     private RecyclerView menuList;
 
     TMSBundle[] visiblePacks = {
@@ -58,6 +60,8 @@ public class TMSActivity extends AppCompatActivity {
         this.toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         this.menuList = (RecyclerView) findViewById(R.id.nav_list);
 
+        this.packsInitialized = false;
+
         for (TMSBundle pack : visiblePacks) {
             int topicId = getResources().getIdentifier(String.format("topic_%s", pack.toString().toLowerCase()), "string", getPackageName());
             String topic = getString(topicId);
@@ -78,7 +82,10 @@ public class TMSActivity extends AppCompatActivity {
         packScroll.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                packScroll.scrollToActiveItem();
+                if (!packsInitialized) {
+                    packScroll.setCurrentItemAndCenter(0);
+                    packsInitialized = true;
+                }
             }
         });
 
@@ -91,7 +98,6 @@ public class TMSActivity extends AppCompatActivity {
         initializeToolbar();
         initializeMenu();
     }
-
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

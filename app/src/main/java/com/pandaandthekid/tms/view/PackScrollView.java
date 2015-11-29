@@ -3,13 +3,15 @@ package com.pandaandthekid.tms.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-public class PackScrollView extends HorizontalScrollView implements View.OnTouchListener {
+public class PackScrollView extends HorizontalScrollView {
 
     private static final int SWIPE_PAGE_ON_FACTOR = 10;
     private static final int PACK_WIDTH_DP = 200;
@@ -19,6 +21,8 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
     private float prevScrollX;
     private boolean mStart;
     private int packWidth;
+
+    private GestureDetector gestureDetector;
 
     public PackScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -31,49 +35,36 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
         windowManager.getDefaultDisplay().getMetrics(metrics);
         float logicalDensity = metrics.density;
 
-        packWidth = (int) Math.ceil(PACK_WIDTH_DP * logicalDensity);
+        gestureDetector = new GestureDetector(context, new PackScrollGesture());
 
-        setOnTouchListener(this);
+        packWidth = (int) Math.ceil(PACK_WIDTH_DP * logicalDensity);
     }
 
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        int x = (int) event.getRawX();
-
-        boolean handled = false;
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                prevScrollX = x;
-                break;
-            case MotionEvent.ACTION_MOVE:
-                if (mStart) {
-                    prevScrollX = x;
-                    mStart = false;
-                }
-
-                break;
-            case MotionEvent.ACTION_UP:
-                mStart = true;
-                int minFactor = packWidth / SWIPE_PAGE_ON_FACTOR;
-
-                if ((prevScrollX - (float) x) > minFactor) {
-                    if (activePack < getMaxItemCount() - 1) {
-                        activePack = activePack + 1;
-                    }
-                }
-                else if (((float) x - prevScrollX) > minFactor) {
-                    if (activePack > 0) {
-                        activePack = activePack - 1;
-                    }
-                }
-
-                scrollToActiveItem();
-
-                handled = true;
-                break;
+    public boolean onTouchEvent(MotionEvent event) {
+        if (gestureDetector.onTouchEvent(event)) {
+            return true;
         }
+        return super.onTouchEvent(event);
+    }
 
-        return handled;
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        if (gestureDetector.onTouchEvent(ev)) {
+            return true;
+        } else {
+            return super.onInterceptTouchEvent(ev);
+        }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        boolean scroll = onTouchEvent(ev);
+        if (!scroll) {
+            return super.dispatchTouchEvent(ev);
+        } else {
+            return true;
+        }
     }
 
     private int getMaxItemCount() {
@@ -97,6 +88,7 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
         targetItem = Math.max(0, targetItem);
 
         activePack = targetItem;
+        Log.d("Active Pack", activePack + "");
 
         // Scroll so that the target child is centered
         View targetView = getLinearLayout().getChildAt(targetItem);
@@ -119,11 +111,27 @@ public class PackScrollView extends HorizontalScrollView implements View.OnTouch
         scrollToActiveItem();
     }
 
-    public int getActivePack() {
-        return activePack;
-    }
+    class PackScrollGesture extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 
-    public void setActivePack(int activePack) {
-        this.activePack = activePack;
+            try {
+                if (e1.getX() - e2.getX() > packWidth / SWIPE_PAGE_ON_FACTOR) {
+                    activePack++;
+                } else if (e2.getX() - e1.getX() > packWidth / SWIPE_PAGE_ON_FACTOR) {
+                    activePack--;
+                } else {
+                    return false;
+                }
+
+                scrollToActiveItem();
+
+                return true;
+            } catch (Exception e) {
+                Log.e("Fling", "There was an error processing the fling event: " + e.getMessage());
+            }
+
+            return false;
+        }
     }
 }
