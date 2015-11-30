@@ -44,13 +44,6 @@ public class VerseFragment extends Fragment {
         this.verseView.setText(this.currentVerse.getVerse());
         this.verseScriptureView.setText(this.currentVerse.getScripture());
 
-//        Typeface tf = Typeface.createFromAsset(getActivity().getAssets(),
-//                "font/Roboto-Light.ttf");
-//
-//        this.verseSubTopicView.setTypeface(tf);
-//        this.verseView.setTypeface(tf);
-//        this.verseScriptureView.setTypeface(tf);
-
         return view;
     }
 }

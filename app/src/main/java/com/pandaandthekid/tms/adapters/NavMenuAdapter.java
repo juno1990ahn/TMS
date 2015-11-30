@@ -3,12 +3,17 @@ package com.pandaandthekid.tms.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.pandaandthekid.tms.INavigateActivity;
 import com.pandaandthekid.tms.MemorizeActivity;
 import com.pandaandthekid.tms.R;
 import com.pandaandthekid.tms.TMSActivity;
@@ -51,23 +56,38 @@ public class NavMenuAdapter extends RecyclerView.Adapter<NavMenuAdapter.ViewHold
         // - get element from your data set at this position
         // - replace the contents of the view with that element
         final NavMenuItem menuItem = menuData[position];
-        ((TextView) holder.view.findViewById(R.id.menu_item_text)).setText(menuItem.label);
+        TextView itemLabel = ((TextView) holder.view.findViewById(R.id.menu_item_text));
+        itemLabel.setText(menuItem.label);
 
         if (menuItem.type == NavMenuItem.ACTIVITY_LINK) {
+            if (menuItem.activity.equals(TMSActivity.class)) {
+                itemLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX, itemLabel.getTextSize() * 1.3f);
+            }
             if (context instanceof TMSActivity && menuItem.activity.equals(TMSActivity.class)) {
-
+                itemLabel.setTextColor(ContextCompat.getColor(context, R.color.dark_fill_shape));
+                itemLabel.setTypeface(null, Typeface.BOLD);
             } else if (context instanceof MemorizeActivity && menuItem.activity.equals(MemorizeActivity.class) && ((MemorizeActivity) context).getCurrentPack().equals(menuItem.metadata.get(NavMenuItem.PACK))) {
+                itemLabel.setTextColor(ContextCompat.getColor(context, R.color.dark_fill_shape));
+                itemLabel.setTypeface(null, Typeface.BOLD);
             } else {
                 holder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(context, menuItem.activity);
+                        final Intent intent = new Intent(context, menuItem.activity);
                         if (menuItem.metadata != null) {
                             intent.putExtra(TMSBundle.CHOSEN_PACK, (TMSBundle) menuItem.metadata.get(NavMenuItem.PACK));
                         }
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                        context.startActivity(intent);
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                context.startActivity(intent);
+                            }
+                        }, 250);
+
+                        ((INavigateActivity) context).closeDrawer();
                     }
                 });
             }

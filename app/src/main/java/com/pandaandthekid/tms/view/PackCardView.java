@@ -37,12 +37,6 @@ public class PackCardView extends LinearLayout {
 
         this.letterView.setText(pack.toString());
         this.topicView.setText(topic);
-
-//        Typeface tf = Typeface.createFromAsset(context.getAssets(),
-//                "font/Roboto-Light.ttf");
-//
-//        this.letterView.setTypeface(tf);
-//        this.topicView.setTypeface(tf);
     }
 
     public TMSBundle getPack() {

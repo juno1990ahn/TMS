@@ -2,6 +2,7 @@ package com.pandaandthekid.tms;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -14,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,7 +28,7 @@ import com.pandaandthekid.tms.view.VerseFragment;
 import java.util.List;
 import java.util.Vector;
 
-public class MemorizeActivity extends AppCompatActivity {
+public class MemorizeActivity extends AppCompatActivity implements INavigateActivity {
 
     final static int START_VERSE = 1;
 
@@ -61,11 +63,6 @@ public class MemorizeActivity extends AppCompatActivity {
         this.toolbar = (Toolbar) findViewById(R.id.tms_tool_bar);
         this.toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         this.menuList = (RecyclerView) findViewById(R.id.nav_list);
-
-//        Typeface tf = Typeface.createFromAsset(getAssets(),
-//                "font/Roboto-Light.ttf");
-//
-//        toolbarTitle.setTypeface(tf);
 
         initializeToolbar();
         initializeFragments();
@@ -147,8 +144,37 @@ public class MemorizeActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_contact_us:
+                // Send email to me
+                final Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+
+                emailIntent.setType("plain/text");
+                emailIntent.setData(Uri.parse(getString(R.string.contact_us_email)));
+                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.contact_us_email_subject));
+
+                startActivity(Intent.createChooser(emailIntent, getString(R.string.contact_us_email_chooser)));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
     public TMSBundle getCurrentPack() {
         return this.currentPack;
+    }
+
+    @Override
+    public DrawerLayout getDrawerLayout() {
+        return drawerLayout;
+    }
+
+    @Override
+    public void closeDrawer() {
+        drawerLayout.closeDrawers();
     }
 }
 

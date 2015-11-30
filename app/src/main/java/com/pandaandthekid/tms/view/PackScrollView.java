@@ -18,8 +18,6 @@ public class PackScrollView extends HorizontalScrollView {
 
 
     private int activePack;
-    private float prevScrollX;
-    private boolean mStart;
     private int packWidth;
 
     private GestureDetector gestureDetector;
@@ -40,32 +38,12 @@ public class PackScrollView extends HorizontalScrollView {
         packWidth = (int) Math.ceil(PACK_WIDTH_DP * logicalDensity);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if (gestureDetector.onTouchEvent(event)) {
-            return true;
-        }
-        return super.onTouchEvent(event);
-    }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (gestureDetector.onTouchEvent(ev)) {
-            return true;
-        } else {
-            return super.onInterceptTouchEvent(ev);
-        }
+        return gestureDetector.onTouchEvent(ev);
     }
 
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        boolean scroll = onTouchEvent(ev);
-        if (!scroll) {
-            return super.dispatchTouchEvent(ev);
-        } else {
-            return true;
-        }
-    }
 
     private int getMaxItemCount() {
         return getLinearLayout().getChildCount();
@@ -88,7 +66,6 @@ public class PackScrollView extends HorizontalScrollView {
         targetItem = Math.max(0, targetItem);
 
         activePack = targetItem;
-        Log.d("Active Pack", activePack + "");
 
         // Scroll so that the target child is centered
         View targetView = getLinearLayout().getChildAt(targetItem);
@@ -120,8 +97,6 @@ public class PackScrollView extends HorizontalScrollView {
                     activePack++;
                 } else if (e2.getX() - e1.getX() > packWidth / SWIPE_PAGE_ON_FACTOR) {
                     activePack--;
-                } else {
-                    return false;
                 }
 
                 scrollToActiveItem();

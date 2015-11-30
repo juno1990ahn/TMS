@@ -17,22 +17,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.pandaandthekid.tms.adapters.NavMenuAdapter;
 import com.pandaandthekid.tms.verses.TMSBundle;
 import com.pandaandthekid.tms.view.PackCardView;
 import com.pandaandthekid.tms.view.PackScrollView;
 
-public class TMSActivity extends AppCompatActivity {
+public class TMSActivity extends AppCompatActivity implements INavigateActivity {
 
     private LinearLayout packsContainer;
     private PackScrollView packScroll;
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
-    private TextView selectText;
-    private TextView toolbarTitle;
 
     private boolean packsInitialized;
 
@@ -56,8 +53,6 @@ public class TMSActivity extends AppCompatActivity {
         this.packScroll = (PackScrollView) findViewById(R.id.packScroll);
         this.packsContainer = (LinearLayout) findViewById(R.id.packLayout);
         this.toolbar = (Toolbar) findViewById(R.id.tms_tool_bar);
-        this.selectText = (TextView) findViewById(R.id.select_label);
-        this.toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         this.menuList = (RecyclerView) findViewById(R.id.nav_list);
 
         this.packsInitialized = false;
@@ -88,12 +83,6 @@ public class TMSActivity extends AppCompatActivity {
                 }
             }
         });
-
-//        Typeface tf = Typeface.createFromAsset(getAssets(),
-//                "font/Roboto-Light.ttf");
-//
-//        selectText.setTypeface(tf);
-//        toolbarTitle.setTypeface(tf);
 
         initializeToolbar();
         initializeMenu();
@@ -187,5 +176,15 @@ public class TMSActivity extends AppCompatActivity {
         intent.putExtra(TMSBundle.CHOSEN_PACK, pack);
 
         startActivity(intent);
+    }
+
+    @Override
+    public DrawerLayout getDrawerLayout() {
+        return drawerLayout;
+    }
+
+    @Override
+    public void closeDrawer() {
+        drawerLayout.closeDrawers();
     }
 }
